@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+/* imports the file fonts.css */
+@import 'fonts.css';
+
+html,
+body {
+    scroll-behavior: smooth;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    overflow-x: hidden;
+    min-height: 2000px;
+    background-color: rgb(29, 40, 65);
+
+    font-family: 'Poppins';
+    font-weight: 400;
+    margin: 0;
+
+}
+
+* {
+    box-sizing: border-box;
+}
