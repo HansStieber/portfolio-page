@@ -1,0 +1,28 @@
+.start-screen {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    
+}
+
+.bg-startscreen {
+    width: 100%;
+    height: 700px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -300px;
+}
+
+.foto-front-container {
+   width: 690px;
+   height: 670px;
+   position: absolute;
+   left: 0;
+   bottom: -50px;
+}
+
+.foto-front-splash {
+    width: 100%;
+    height: 100%;
+}
