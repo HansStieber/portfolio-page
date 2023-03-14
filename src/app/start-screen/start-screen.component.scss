@@ -1,8 +1,8 @@
 .start-screen {
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 110px);
+    margin-top: 110px;
     position: relative;
-    
 }
 
 .bg-startscreen {
@@ -11,18 +11,124 @@
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -300px;
+    top: 379px;
 }
 
-.foto-front-container {
-   width: 690px;
-   height: 670px;
-   position: absolute;
-   left: 0;
-   bottom: -50px;
+.foto-front {
+    position: absolute;
+    top: -25px;
+    left: 60px;
 }
 
 .foto-front-splash {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    width: 900px;
+    left: -80px;
+    top: 30px;
+}
+
+.introduction-container {
+    z-index: 9;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 187px;
+    right: 100px;
+
+    div {
+        display: flex;
+    }
+
+    a {
+        margin-top: 44px;
+    }
+}
+
+.name-container {
+    display: flex;
+    flex-direction: column;
+
+    span:first-child {
+        font-size: 90px;
+        font-weight: 700;
+        line-height: 120%;
+    }
+
+    span:nth-child(2) {
+        font-size: 55px;
+        font-weight: 400;
+        line-height: 110%;
+    }
+}
+
+.i-am {
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 120%;
+    rotate: -90deg;
+    margin: 0 -54px -5px 0;
+}
+
+.scroll-down {
+    position: absolute;
+    right: 100px;
+    bottom: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    rotate: 90deg;
+
+    span {
+        font-size: 23px;
+        color: white;
+    }
+
+    img {
+        width: 16px;
+        height: 16px;
+        rotate: -90deg;
+        margin-left: 10px;
+    }
+}
+
+.socials-container {
+    position: absolute;
+    left: 0px;
+    bottom: 50px;
+    display: flex;
+    align-items: center;
+
+    div:first-child {
+        width: 100px;
+        border: 2px solid #FF4747;
+        margin-right: 42px;
+    }
+
+    div:nth-child(2) {
+        display: flex;
+        width: 215px;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        margin-right: 42px;
+        text-decoration: none;
+
+        img {
+            width: 30px;
+            transition: all 100ms ease-in-out;
+
+            &:hover {
+                width: 40px;
+            }
+        }
+    }
+
+    span {
+        font-size: 23px;
+        color: white;
+    }
 }

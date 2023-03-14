@@ -4,7 +4,7 @@ header {
     top: 0px;
     z-index: 10;
     width: 100%;
-    max-width: 1600px;
+    max-width: 1500px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,8 +40,4 @@ header {
             }
         }
     }
-}
-
-.orange {
-    color: #FF4747 !important;
 }
