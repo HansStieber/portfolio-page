@@ -1,17 +1,89 @@
 .my-skills {
     display: flex;
     align-items: center;
+    height: 100vh;
+    position: relative;
+
+    @media (min-height: 950px) {
+        height: 750px;
+    }
+}
+
+.splash-my-skills {
+    position: absolute;
+    left: -580px;
+    bottom: -370px;
+    rotate: 180deg;
+    transform: scaleX(-1);
 }
 
 .icons-container {
-    width: 60%;
+    z-index: 1;
+    width: 62%;
+    padding: 0 0 0 100px;
 }
 
 .icons-inner-container {
     display: flex;
     flex-wrap: wrap;
+    gap: 90px;
+    row-gap: 60px;
+
+    @media(max-width: 1200px) {
+        gap: 60px;
+    }
+
+    div {
+        width: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        
+        span {
+            font-weight: bold;
+        }
+
+        img {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.skill-container {
+    width: 38%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+}
+
+.head-skill {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .skill-text {
-    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 100px;
+    margin-top: 35px;
+
+    span {
+        text-align: end;
+    }
+
+    a {
+        height: 80px;
+        margin-top: 50px;
+    }
+}
+
+.line-right {
+    width: 60px;
+    margin-left: 40px;
+    height: 0;
+    border: 2px solid #FF4747;
 }
