@@ -7,6 +7,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { PortfolioPageComponent } from './portfolio-page/portfolio-page.component';
 import { StartScreenComponent } from './start-screen/start-screen.component';
 import { AboutMeComponent } from './about-me/about-me.component';
+import { MySkillsComponent } from './my-skills/my-skills.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AboutMeComponent } from './about-me/about-me.component';
     NavigationComponent,
     PortfolioPageComponent,
     StartScreenComponent,
-    AboutMeComponent
+    AboutMeComponent,
+    MySkillsComponent
   ],
   imports: [
     BrowserModule,

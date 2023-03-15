@@ -1,0 +1,17 @@
+.my-skills {
+    display: flex;
+    align-items: center;
+}
+
+.icons-container {
+    width: 60%;
+}
+
+.icons-inner-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skill-text {
+    width: 40%;
+}
