@@ -1,0 +1,47 @@
+.project-container {
+    display: flex;
+    width: 100%;
+    margin: 75px 0;
+}
+
+.reversed {
+    flex-direction: row-reverse;
+}
+
+.img-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 620px;
+        height: 340px;
+    }
+}
+
+.info-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 35px;
+}
+
+.info-project {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-end {
+    align-items: flex-end;
+}
+
+.text-end {
+    text-align: end;
+}

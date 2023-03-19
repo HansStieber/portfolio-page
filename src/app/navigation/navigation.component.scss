@@ -30,14 +30,38 @@ header {
         gap: 46px;
 
         a {
-            font-size: 23px;
-            font-weight: 400;
-            color: white;
-            transition: color 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            height: 38px;
 
-            &:hover {
-                color: #FA7902;
+            span {
+                font-size: 23px;
+                font-weight: 400;
+                color: white;
+                transition: color 0.2s ease-in-out;
+
+                &:hover {
+                    color: #FA7902;
+                }
+            }
+
+            img {
+                display: none;
+                width: 55px;
+                height: 4px;
             }
         }
     }
 }
+
+.selected {
+    display: block !important;
+    color: #FA7902 !important;
+}
+
+.scrolled {
+    background-color: red;
+    color: white;
+  }
+
+  

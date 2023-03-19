@@ -1,14 +1,23 @@
 <header>
     <div>
-        <a href="#start-screen">
+        <a href="#start-screen" (click)="selectedMenuItem = ''">
             <span>H</span>
             <span class="red">a</span>
             <span>ns</span>
         </a>
     </div>
     <nav>
-        <a href="#about-me">About me</a>
-        <a href="#my-skills">Skills</a>
-        <a href="#">Portfolio</a>
+        <a href="#about-me" (click)="selectedMenuItem = 'About me'">
+            <span [ngClass]="{'selected': selectedMenuItem === 'About me'}">About me</span>
+            <img [ngClass]="{'selected': selectedMenuItem === 'About me'}" src="../../assets/img/selected.png">
+        </a>
+        <a href="#my-skills" (click)="selectedMenuItem = 'My skills'">
+            <span [ngClass]="{'selected': selectedMenuItem === 'My skills'}">Skills</span>
+            <img [ngClass]="{'selected': selectedMenuItem === 'My skills'}" src="../../assets/img/selected.png">
+        </a>
+        <a href="#portfolio" (click)="selectedMenuItem = 'Portfolio'">
+            <span [ngClass]="{'selected': selectedMenuItem === 'Portfolio'}">Portfolio</span>
+            <img [ngClass]="{'selected': selectedMenuItem === 'Portfolio'}" src="../../assets/img/selected.png">
+        </a>
     </nav>
 </header>

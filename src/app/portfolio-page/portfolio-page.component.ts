@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./portfolio-page.component.scss']
 })
 export class PortfolioPageComponent {
-
 }

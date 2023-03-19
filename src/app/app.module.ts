@@ -9,6 +9,11 @@ import { StartScreenComponent } from './start-screen/start-screen.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { MySkillsComponent } from './my-skills/my-skills.component';
 import { FooterComponent } from './footer/footer.component';
+import { ContactComponent } from './contact/contact.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { ProjectComponent } from './project/project.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +23,16 @@ import { FooterComponent } from './footer/footer.component';
     StartScreenComponent,
     AboutMeComponent,
     MySkillsComponent,
-    FooterComponent
+    FooterComponent,
+    ContactComponent,
+    PortfolioComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
