@@ -39,6 +39,10 @@
     top: 1000px;
     left: -200px;
     z-index: -1;
+
+    @media screen and (max-width: 992px) {
+        top: 800px;
+    }
 }
 
 .splash-portfolio2 {
