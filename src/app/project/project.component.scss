@@ -1,7 +1,8 @@
 .project-container {
     display: flex;
     width: 100%;
-    margin: 75px 0;
+    margin: 115px 0;
+    padding: 0 100px;
 }
 
 .reversed {
@@ -9,37 +10,106 @@
 }
 
 .img-container {
-    width: 50%;
+    width: 48%;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    img {
+    div {
         width: 620px;
         height: 340px;
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 400px;
+            height: 400px;
+        }
     }
 }
 
+.space {
+    width: 8%;
+}
+
 .info-container {
-    width: 50%;
+    width: 44%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 35px;
 }
 
 .info-project {
     display: flex;
     flex-direction: column;
+
+    h2 {
+        font-size: 32px;
+        font-weight: 700;
+        color: #FF4747;
+        margin: 0 0 15px 0;
+    }
+
+    h3 {
+        font-size: 23px;
+        font-weight: 400;
+        color: #FA7902;
+        margin: 0 0 15px 0;
+    }
+
+    span {
+        font-size: 16px;
+    }
 }
 
 .button-box {
     display: flex;
-    flex-direction: column;
+    margin: 35px 0;
+
+    a:first-child button {
+        font-family: "Poppins", sans-serif;
+        font-size: 23px;
+        line-height: 120%;
+        font-weight: 400;
+        color: white;
+        background-color: #FF4747;
+        padding: 15px 30px 15px 30px;
+        border-style: none;
+        border-radius: 10px;
+        transition: all 125ms ease-in-out;
+        margin-right: 60px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #FA7902;
+        }
+    }
+
+    a:last-child button {
+        font-family: "Poppins", sans-serif;
+        font-size: 23px;
+        line-height: 120%;
+        font-weight: 400;
+        color: white;
+        background-color: transparent;
+        padding: 15px 30px 15px 30px;
+        border: 1px solid #FA7902;
+        border-radius: 10px;
+        transition: all 125ms ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #FA7902;
+        }
+    }
 }
 
-.flex-end {
+.ai-flex-end {
     align-items: flex-end;
+}
+
+.jc-flex-end {
+    justify-content: flex-end;
 }
 
 .text-end {

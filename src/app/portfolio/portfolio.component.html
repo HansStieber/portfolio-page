@@ -1,14 +1,20 @@
 <section id="portfolio" class="portfolio">
-    <div>
+    <div class="headline-container">
+        <div></div>
         <h1>Portfolio</h1>
+        <div></div>
     </div>
-    <p>
-        This page is a sample of my work! Scroll down to see other projects I have
-        developed!
-    </p>
     <div>
-        <app-project *ngFor="let project of projects.titels; let i = index" [indexImpair]="i % 2 != 0"
-            [title]="titles[i]" [explanation]="explanations[i]" [img]="img[i]" [language]="language[i]" [web]="web[i]"
-            [git]="git[i]"></app-project>
+        <span>
+            This page is a sample of my work - Please feel free to try them out.
+        </span>
     </div>
+    <div>
+        <app-project *ngFor="let app of applications; let i = index" [indexImpair]="i % 2 != 0"
+            [title]="applications[i]['title']" [explanation]="applications[i]['explanation']"
+            [img]="applications[i]['img']" [language]="applications[i]['language']" [web]="applications[i]['web']"
+            [git]="applications[i]['git']"></app-project>
+    </div>
+    <img class="splash-portfolio1" src="../../assets/img/splash-portfolio1.png" alt="splash-portfolio-1">
+    <img class="splash-portfolio2" src="../../assets/img/splash-portfolio2.png" alt="splash-portfolio-2">
 </section>

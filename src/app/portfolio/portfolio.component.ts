@@ -1,18 +1,22 @@
-import { Component } from '@angular/core';
-import { Projects } from '../../models/projects.class';
-import { ProjectComponent } from '../project/project.component';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss'],
 })
-export class PortfolioComponent {
-  projects = new Projects();
-  titles = this.projects.titels;
-  explanations = this.projects.explanation;
-  img = this.projects.img;
-  language = this.projects.language;
-  web=this.projects.web;
-  git=this.projects.git;
+export class PortfolioComponent implements OnInit {
+  applications: any;
+  url: string = '../../assets/jsons/applications.json';
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit() {
+    this.http.get(this.url).subscribe(res => {
+      this.applications = res;
+      console.log(this.applications)
+    });
+  }
 }
+
