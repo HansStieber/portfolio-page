@@ -6,7 +6,7 @@
             <span>ns</span>
         </a>
     </div>
-    <nav>
+    <nav> 
         <a href="#about-me" (click)="selectedMenuItem = 'About me'">
             <span [ngClass]="{'selected': selectedMenuItem === 'About me'}">About me</span>
             <img [ngClass]="{'selected': selectedMenuItem === 'About me'}" src="../../assets/img/selected.png">
@@ -20,4 +20,5 @@
             <img [ngClass]="{'selected': selectedMenuItem === 'Portfolio'}" src="../../assets/img/selected.png">
         </a>
     </nav>
+    <img class="burger" src="../../assets/img/burger.png" alt="menu-button">
 </header>

@@ -4,8 +4,14 @@
     height: 100vh;
     position: relative;
 
-    @media screen and (min-height: 950px) {
+    @media screen and (min-height: 950px) and (min-width: 992px) {
         height: 750px;
+    }
+
+    @media screen and (max-width: 992px) {
+        flex-direction: column-reverse;
+        height: unset;
+        margin-top: 100px;
     }
 }
 
@@ -21,6 +27,11 @@
     z-index: 1;
     width: 62%;
     padding: 0 0 0 100px;
+
+    @media screen and (max-width: 992px) {
+        padding: 0 25px;
+        width: 100%;
+    }
 }
 
 .icons-inner-container {
@@ -39,6 +50,10 @@
 
     @media screen and (max-width: 1100px) {
         gap: 25px;
+    }
+
+    @media screen and (max-width: 992px) {
+        justify-content: center;
     }
 
     div {
@@ -83,6 +98,10 @@
     flex-direction: column;
     justify-content: flex-end;
     margin-bottom: 40px;
+
+    @media screen and (max-width: 992px) {
+        width: 100%;
+    }
 }
 
 .head-skill {
