@@ -38,6 +38,14 @@ h1 {
     font-size: 90px;
     margin: 0;
     line-height: 120%;
+
+    @media screen and (max-width: 1350px) {
+        font-size: 72px;
+
+        @media screen and (max-width: 1100px) {
+            font-size: 60px;
+        }
+    }
 }
 
 p {

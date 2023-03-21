@@ -22,6 +22,15 @@
     position: absolute;
     top: 115px;
     left: 60px;
+
+    @media screen and (max-width: 1200px) {
+        width: 600px;
+    }
+
+    @media screen and (max-width: 1080px) {
+        top: 170px;
+        width: 550px;
+    }
 }
 
 .foto-front-splash {
@@ -29,6 +38,17 @@
     width: 900px;
     left: -80px;
     top: 140px;
+
+    @media screen and (max-width: 1200px) {
+        width: 800px;
+        left: -60px;
+    }
+
+    @media screen and (max-width: 1080px) {
+        top: 170px;
+        left: -40px;
+        width: 700px;
+    }
 }
 
 .introduction-container {
@@ -56,12 +76,28 @@
         font-size: 90px;
         font-weight: 700;
         line-height: 120%;
+
+        @media screen and (max-width: 1400px) {
+            font-size: 72px;
+        }
+
+        @media screen and (max-width: 1200px) {
+            font-size: 64px;
+        }
     }
 
     span:nth-child(2) {
         font-size: 55px;
         font-weight: 400;
         line-height: 110%;
+
+        @media screen and (max-width: 1400px) {
+            font-size: 44px;
+        }
+
+        @media screen and (max-width: 1200px) {
+            font-size: 40px;
+        }
     }
 }
 
@@ -71,6 +107,14 @@
     line-height: 120%;
     rotate: -90deg;
     margin: 0 -54px -5px 0;
+
+    @media screen and (max-width: 1400px) {
+        font-size: 54px;
+    }
+
+    @media screen and (max-width: 1200px) {
+        font-size: 46px;
+    }
 }
 
 .scroll-down {
