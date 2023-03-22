@@ -20,9 +20,14 @@
             <img [ngClass]="{'selected': selectedMenuItem === 'Portfolio'}" src="../../assets/img/selected.png">
         </a>
     </nav>
-    <img *ngIf="menuOpen == false" (click)="menuOpen = true" class="burger" src="../../assets/img/burger.png"
+    <img *ngIf="menuOpen == false" (click)="openMenu()" class="burger" src="../../assets/img/burger.png"
         alt="menu-button">
-    <img *ngIf="menuOpen == true" (click)="menuOpen = false" class="burger" src="../../assets/img/exit.png"
+    <img *ngIf="menuOpen == true" (click)="closeMenu()" class="burger" src="../../assets/img/exit.png"
         alt="exit-button">
 </header>
-<!--<app-mobile-menu [menuOpen]="menuOpen"></app-mobile-menu>-->
+<nav class="mobile-nav" *ngIf="menuOpen" [@slideInOut]>
+    <a href="#about-me" (click)="menuOpen = false">About me</a>
+    <a href="#my-skills" (click)="menuOpen = false">My skills</a>
+    <a href="#portfolio" (click)="menuOpen = false">Portfolio</a>
+    <a href="#contact"><span (click)="menuOpen = false">Contact</span></a>
+</nav>
