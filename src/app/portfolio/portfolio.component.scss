@@ -52,3 +52,11 @@
     transform: scaleX(-1);
     z-index: -1;
 }
+
+@media screen and (max-width: 992px) {
+    .underline {
+        display: inline-block;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+}

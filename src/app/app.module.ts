@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ProjectComponent } from './project/project.component';
 import {HttpClientModule} from '@angular/common/http';
+import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {HttpClientModule} from '@angular/common/http';
     FooterComponent,
     ContactComponent,
     PortfolioComponent,
-    ProjectComponent
+    ProjectComponent,
+    MobileMenuComponent
   ],
   imports: [
     BrowserModule,

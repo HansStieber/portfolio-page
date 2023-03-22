@@ -1,4 +1,5 @@
-<app-navigation></app-navigation>
+<app-navigation [menuOpen]="menuOpen"></app-navigation>
+<app-mobile-menu [menuOpen]="menuOpen" *ngIf="menuOpen"></app-mobile-menu>
 <app-start-screen></app-start-screen>
 <app-about-me></app-about-me>
 <app-my-skills></app-my-skills>

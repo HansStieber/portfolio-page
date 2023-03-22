@@ -13,6 +13,10 @@
         height: unset;
         margin: 100px 0;
     }
+
+    @media screen and (max-width: 500px) {
+        margin: 0;
+    }
 }
 
 .splash-my-skills {

@@ -8,30 +8,40 @@ footer {
     align-items: center;
     justify-content: space-between;
 
-    span {
-        font-size: 23px;
-        font-weight: 300;
+    @media screen and (max-width: 992px) {
+        height: 350px;
+        padding: 80px 80px;
+        flex-direction: column;
+    }
+}
+
+span {
+    font-size: 23px;
+    font-weight: 300;
+}
+
+div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @media screen and (max-width: 992px) {
+        align-items: center;
     }
 
-    div:first-child {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+    a {
+        font-weight: 300;
 
-        a {
-            font-weight: 300;
-
-            &:hover {
-                cursor: pointer;
-            }
+        &:hover {
+            cursor: pointer;
         }
     }
+}
 
-    div {
-        display: flex;
-        justify-content: space-between;
-        width: 215px;
-    }
+div {
+    display: flex;
+    justify-content: space-between;
+    width: 215px;
 
     a {
         text-decoration: none !important;
@@ -55,5 +65,10 @@ footer {
         font-size: 40px;
         font-weight: 600;
         color: white;
+    }
+}
+@media screen and (max-width: 992px) {
+    .link-container div {
+        justify-content: center;
     }
 }
