@@ -22,8 +22,8 @@
     </nav>
     <img *ngIf="menuOpen == false" (click)="openMenu()" class="burger" src="../../assets/img/burger.png"
         alt="menu-button">
-    <img *ngIf="menuOpen == true" (click)="closeMenu()" class="burger" src="../../assets/img/exit.png"
-        alt="exit-button">
+    <a *ngIf="menuOpen == true" href="#top"><img (click)="closeMenu()" class="burger" src="../../assets/img/exit.png"
+        alt="exit-button"></a>
 </header>
 <nav class="mobile-nav" *ngIf="menuOpen" [@slideInOut]>
     <a href="#about-me" (click)="closeMenu()">About me</a>
