@@ -16,6 +16,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ProjectComponent } from './project/project.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { ImpressumPageComponent } from './impressum-page/impressum-page.component';
+import { ImpressumComponent } from './impressum/impressum.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { CommonModule } from '@angular/common';
     ContactComponent,
     PortfolioComponent,
     ProjectComponent,
+    ImpressumPageComponent,
+    ImpressumComponent,
   ],
   imports: [
     BrowserModule,
