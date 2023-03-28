@@ -25,6 +25,10 @@
     bottom: -370px;
     rotate: 180deg;
     transform: scaleX(-1);
+
+    @media screen and (max-width: 992px) {
+        left: -650px;
+    }
 }
 
 .icons-container {
@@ -144,6 +148,7 @@
 
     @media screen and (max-width: 992px) {
         padding-left: 25px;
+        padding-right: 25px;
     }
 
     span {
@@ -165,4 +170,9 @@
     margin-left: 40px;
     height: 0;
     border: 2px solid #FF4747;
+
+    @media screen and (max-width: 992px) {
+        width: 25px;
+        margin-left: 5px;
+    }
 }
