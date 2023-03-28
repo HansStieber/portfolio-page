@@ -29,7 +29,7 @@ export class NavigationComponent {
   public menuOpen: boolean = false;
 
   openMenu() {
-    this.menuOpen = true;
+    this.menuOpen = true; 
   }
 
   closeMenu() {

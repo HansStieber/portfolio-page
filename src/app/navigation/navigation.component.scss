@@ -80,11 +80,10 @@ header {
 }
 
 .mobile-nav {
-    position: absolute;
+    position: fixed;
     top: 110px;
     z-index: 15;
     width: 100vw;
-    height: 100vh;
     height: calc(100vh - 110px);
     background-color: rgb(30, 43, 69, 0.7);
     display: flex;
@@ -95,5 +94,7 @@ header {
     a {
         text-decoration: none;
         color: white;
+        font-size: 24px;
+        margin-bottom: 12px;
     }
 }

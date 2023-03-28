@@ -26,8 +26,8 @@
         alt="exit-button">
 </header>
 <nav class="mobile-nav" *ngIf="menuOpen" [@slideInOut]>
-    <a href="#about-me" (click)="menuOpen = false">About me</a>
-    <a href="#my-skills" (click)="menuOpen = false">My skills</a>
-    <a href="#portfolio" (click)="menuOpen = false">Portfolio</a>
-    <a href="#contact"><span (click)="menuOpen = false">Contact</span></a>
-</nav>
+    <a href="#about-me" (click)="closeMenu()">About me</a>
+    <a href="#my-skills" (click)="closeMenu()">My skills</a>
+    <a href="#portfolio" (click)="closeMenu()">Portfolio</a>
+    <a href="#contact"><span (click)="closeMenu()">Contact</span></a>
+</nav> 
