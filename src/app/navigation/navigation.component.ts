@@ -1,8 +1,7 @@
-import { Component, Input } from '@angular/core';
-import { HostBinding } from '@angular/core';
+import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import {
   trigger,
-  state,
   style,
   animate,
   transition,
@@ -28,8 +27,43 @@ export class NavigationComponent {
   selectedMenuItem: string = '';
   public menuOpen: boolean = false;
 
+  constructor(private router: Router) {
+    router.events.subscribe((val) => {
+      if (val instanceof NavigationEnd) {
+        console.log(this.selectedMenuItem)
+        if (this.router.url === '/impressum') {
+          this.selectedMenuItem = '';
+        }
+        if (this.router.url === '/') {
+          setTimeout(() => {
+            if (document.getElementById(this.selectedMenuItem)) {
+              document.getElementById(this.selectedMenuItem)!.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "nearest"
+              });
+            }
+          }, 10);
+        }
+      }
+    });
+  }
+
+  async scrollToSection(id: string) {
+    this.selectedMenuItem = id;
+    if (this.menuOpen == true) {
+      this.menuOpen = false;
+    }
+    await this.router.navigate(['']);
+    document.getElementById(id)!.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest"
+    });
+  }
+
   openMenu() {
-    this.menuOpen = true; 
+    this.menuOpen = true;
   }
 
   closeMenu() {

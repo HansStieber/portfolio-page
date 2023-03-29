@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./start-screen.component.scss']
 })
 export class StartScreenComponent {
-
+  scrollToContact() {
+    document.getElementById('contact')!.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest"
+    });
+  }
 }

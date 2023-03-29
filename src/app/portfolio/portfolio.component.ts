@@ -15,7 +15,6 @@ export class PortfolioComponent implements OnInit {
   ngOnInit() {
     this.http.get(this.url).subscribe(res => {
       this.applications = res;
-      console.log(this.applications)
     });
   }
 }

@@ -61,4 +61,12 @@ export class ContactComponent {
   changeImgSrc(newSrc: string) {
     this.arrowUp.nativeElement.src = newSrc;
   }
+
+  scrollToStart() {
+    document.getElementById('start-screen')!.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest"
+    });
+  }
 }
