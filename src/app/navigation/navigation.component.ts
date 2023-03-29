@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import {
   trigger,
@@ -30,7 +30,6 @@ export class NavigationComponent {
   constructor(private router: Router) {
     router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
-        console.log(this.selectedMenuItem)
         if (this.router.url === '/impressum') {
           this.selectedMenuItem = '';
         }
@@ -43,18 +42,49 @@ export class NavigationComponent {
                 inline: "nearest"
               });
             }
-          }, 10);
+          }, 100);
         }
       }
     });
   }
 
+  @HostListener('window:scroll', ['$event'])
+  scroll() {
+    let startScreen: any = document.getElementById('start-screen')?.offsetTop;
+    let aboutMe: any = document.getElementById('about-me')?.offsetTop;
+    let mySkills: any = document.getElementById('my-skills')?.offsetTop;
+    let portfolio: any = document.getElementById('portfolio')?.offsetTop;
+
+    let section1: any = startScreen + window.innerHeight / 2;
+    let section2: any = startScreen + aboutMe + window.innerHeight / 2;
+    let section3: any = startScreen + aboutMe + mySkills - window.innerHeight / 2;
+    let section4: any = startScreen + aboutMe + mySkills + portfolio - window.innerHeight;
+
+    if (window.pageYOffset < section1) {
+      this.selectedMenuItem = '';
+    }
+    if (window.pageYOffset > section1) {
+      this.selectedMenuItem = 'about-me';
+    }
+    if (window.pageYOffset > section2) {
+      this.selectedMenuItem = 'my-skills';
+    }
+    if (window.pageYOffset > section3) {
+      this.selectedMenuItem = 'portfolio';
+    }
+    if (window.pageYOffset > section4) {
+      this.selectedMenuItem = '';
+    }
+  }
+
   async scrollToSection(id: string) {
-    this.selectedMenuItem = id;
     if (this.menuOpen == true) {
       this.menuOpen = false;
     }
     await this.router.navigate(['']);
+    setTimeout(() => {
+      this.selectedMenuItem = id;
+    }, 90);
     document.getElementById(id)!.scrollIntoView({
       behavior: "smooth",
       block: "start",
