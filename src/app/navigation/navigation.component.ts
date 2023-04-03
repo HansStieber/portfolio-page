@@ -27,6 +27,7 @@ export class NavigationComponent {
   selectedMenuItem: string = '';
   public menuOpen: boolean = false;
 
+
   constructor(private router: Router) {
     router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
@@ -35,17 +36,21 @@ export class NavigationComponent {
         }
         if (this.router.url === '/') {
           setTimeout(() => {
-            if (document.getElementById(this.selectedMenuItem)) {
-              document.getElementById(this.selectedMenuItem)!.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-                inline: "nearest"
-              });
-            }
+            this.scrollToSelectedSection();
           }, 100);
         }
       }
     });
+  }
+
+  scrollToSelectedSection() {
+    if (document.getElementById(this.selectedMenuItem)) {
+      document.getElementById(this.selectedMenuItem)!.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest"
+      });
+    }
   }
 
   @HostListener('window:scroll', ['$event'])

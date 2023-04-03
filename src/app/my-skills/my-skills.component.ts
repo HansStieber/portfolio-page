@@ -11,4 +11,12 @@ export class MySkillsComponent implements OnInit {
   ngOnInit(): void {
     AOS.init();
   }
+
+  async scrollToSection(id: string) {
+    document.getElementById(id)!.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest"
+    });
+  }
 }

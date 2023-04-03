@@ -25,11 +25,11 @@
                 <textarea required placeholder="Your message" type="text" name="message" #messageField
                     data-aos="fade-left"></textarea>
                 <div class="button-container" data-aos="fade-left">
-                    <button #sendButton class="btn-orange">Send message :)</button>
+                    <button #sendButton class="btn-orange" [ngClass]="{'confirmation': messageSent === true}">{{message}}</button>
                 </div>
             </form>
         </div>
-    </div>
+    </div> 
     <div class="lower-container" data-aos="fade-up">
         <a (click)="scrollToStart()">
             <img #arrowUp src="../../assets/img/go-up.png"

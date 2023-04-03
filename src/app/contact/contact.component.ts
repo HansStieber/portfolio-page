@@ -12,11 +12,19 @@ export class ContactComponent implements OnInit {
   @ViewChild('mailField') mailField!: ElementRef;
   @ViewChild('messageField') messageField!: ElementRef;
   @ViewChild('sendButton') sendButton!: ElementRef;
+  @ViewChild('arrowUp') arrowUp!: ElementRef;
+  messageSent!: boolean;
+  message: string = 'Send message :)';
+
 
   ngOnInit() {
     AOS.init();
   }
 
+
+  /**
+   * The function submits the contact form.
+   */
   async sendMail() {
     this.disableInputFields();
 
@@ -32,11 +40,27 @@ export class ContactComponent implements OnInit {
       }
     );
 
-    this.enableInputFields();
-    this.clearInputFields();
+    this.confirmAndClear();
   }
 
 
+  /**
+   * The function shows a confirmation for the user that the mail has been sent and clears all input fields.
+   */
+  confirmAndClear() {
+    this.showConfirmation();
+    
+    setTimeout(() => {
+    this.enableInputFields();
+    this.clearInputFields();
+    this.hideConfirmation();
+    }, 2000);
+  }
+
+
+  /**
+   * The function disables all input field and the submit button.
+   */
   disableInputFields() {
     this.nameField.nativeElement.disabled = true;
     this.mailField.nativeElement.disabled = true;
@@ -45,6 +69,9 @@ export class ContactComponent implements OnInit {
   }
 
 
+/**
+ * The function enables all input fields and the submit button.
+ */
   enableInputFields() {
     this.nameField.nativeElement.disabled = false;
     this.mailField.nativeElement.disabled = false;
@@ -53,25 +80,53 @@ export class ContactComponent implements OnInit {
   }
 
 
+  /**
+   * The function clears all input fields.
+   */
   clearInputFields() {
     this.nameField.nativeElement.value = '';
     this.mailField.nativeElement.value = '';
     this.messageField.nativeElement.value = '';
     this.sendButton.nativeElement.value = '';
   }
-  
 
-  @ViewChild('arrowUp') arrowUp!: ElementRef;
 
+  /**
+   * The function changes the the src of the image file for the scroll-up symbol.
+   * 
+   * @param newSrc 
+   */
   changeImgSrc(newSrc: string) {
     this.arrowUp.nativeElement.src = newSrc;
   }
 
+
+  /**
+   * The function scrolls to the start-screen section of the page.
+   */
   scrollToStart() {
     document.getElementById('start-screen')!.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest"
     });
+  }
+
+
+  /**
+   * The function shows the confirmation that the mail was sent.
+   */
+  showConfirmation() {
+    this.messageSent = true;
+    this.message = 'Thanks for your message!'
+  }
+
+  
+  /**
+   * The function hides the confirmation that the mail was sent.
+   */
+  hideConfirmation() {
+    this.messageSent = false;
+    this.message = 'Send message :)';
   }
 }
