@@ -1,11 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.scss'],
 })
-export class ProjectComponent {
+export class ProjectComponent implements OnInit {
   @Input() explanation: any;
   @Input() img: any;
   @Input() title: any;
@@ -13,4 +14,8 @@ export class ProjectComponent {
   @Input() web: any;
   @Input() git: any;
   @Input() indexImpair = false;
+
+  ngOnInit() {
+    AOS.init();
+  }
 }

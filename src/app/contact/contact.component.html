@@ -3,9 +3,9 @@
         <div class="left-column">
             <div>
                 <div class="line-left"></div>
-                <h1>Contact</h1>
+                <h1 data-aos="fade-right">Contact</h1>
             </div>
-            <div>
+            <div data-aos="fade-right">
                 <h2>Got a problem to solve?</h2>
                 <p>Contact me through this form, I am interested in hearing you, knowing your ideas and contributing to
                     your
@@ -17,18 +17,20 @@
             <form (submit)="sendMail()" ngNativeValidate #myForm>
                 <input required placeholder="Your name" type="text" name="name"
                     pattern="([a-zA-ZäöüÄÖÜß]+\s+){1,10}([a-zA-ZäöüÄÖÜß]+)"
-                    title="Bitte gib eine Vor- und Nachnamen ein!" #nameField>
+                    title="Bitte gib eine Vor- und Nachnamen ein!" #nameField data-aos="fade-left">
                 <input required placeholder="Your email" type="email" name="mail"
                     pattern="(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\u0022(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*\u0022)@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])"
-                    title="Gib eine gültige E-Mail-Adresse ein! Umlaute sind nicht erlaubt!" #mailField>
-                <textarea required placeholder="Your message" type="text" name="message" #messageField></textarea>
-                <div class="button-container">
+                    title="Gib eine gültige E-Mail-Adresse ein! Umlaute sind nicht erlaubt!" #mailField
+                    data-aos="fade-left">
+                <textarea required placeholder="Your message" type="text" name="message" #messageField
+                    data-aos="fade-left"></textarea>
+                <div class="button-container" data-aos="fade-left">
                     <button #sendButton class="btn-orange">Send message :)</button>
                 </div>
             </form>
         </div>
     </div>
-    <div class="lower-container">
+    <div class="lower-container" data-aos="fade-up">
         <a (click)="scrollToStart()">
             <img #arrowUp src="../../assets/img/go-up.png"
                 (mouseover)="changeImgSrc('../../assets/img/go-up-orange.png')"
