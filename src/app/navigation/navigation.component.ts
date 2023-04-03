@@ -27,7 +27,6 @@ export class NavigationComponent {
   selectedMenuItem: string = '';
   public menuOpen: boolean = false;
 
-
   constructor(private router: Router) {
     router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
@@ -36,35 +35,45 @@ export class NavigationComponent {
         }
         if (this.router.url === '/') {
           setTimeout(() => {
-            this.scrollToSelectedSection();
+            if (document.getElementById(this.selectedMenuItem)) {
+              document.getElementById(this.selectedMenuItem)!.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "nearest"
+              });
+            }
           }, 100);
         }
       }
     });
   }
 
-  scrollToSelectedSection() {
-    if (document.getElementById(this.selectedMenuItem)) {
-      document.getElementById(this.selectedMenuItem)!.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-        inline: "nearest"
-      });
-    }
-  }
 
   @HostListener('window:scroll', ['$event'])
+
+
+  /**
+   * The function defines 4 sections with a value of YOffset which defines where the section begins. It the checks on which section the user is currently located.
+   */
   scroll() {
     let startScreen: any = document.getElementById('start-screen')?.offsetTop;
     let aboutMe: any = document.getElementById('about-me')?.offsetTop;
     let mySkills: any = document.getElementById('my-skills')?.offsetTop;
     let portfolio: any = document.getElementById('portfolio')?.offsetTop;
 
-    let section1: any = startScreen + window.innerHeight / 2;
-    let section2: any = startScreen + aboutMe + window.innerHeight / 2;
-    let section3: any = startScreen + aboutMe + mySkills - window.innerHeight / 2;
-    let section4: any = startScreen + aboutMe + mySkills + portfolio - window.innerHeight;
+    let section1: number = startScreen + window.innerHeight / 2;
+    let section2: number = startScreen + aboutMe + window.innerHeight / 2;
+    let section3: number = startScreen + aboutMe + mySkills - window.innerHeight / 2;
+    let section4: number = startScreen + aboutMe + mySkills + portfolio - window.innerHeight;
 
+    this.checkSection(section1, section2, section3, section4);
+  }
+
+
+  /**
+   * The function checks on which section the user is currently located.
+   */
+  checkSection(section1: number, section2: number, section3: number, section4: number) {
     if (window.pageYOffset < section1) {
       this.selectedMenuItem = '';
     }
@@ -82,6 +91,12 @@ export class NavigationComponent {
     }
   }
 
+
+  /**
+   * The function scrolls to the demanded section.
+   * 
+   * @param id - The variable defines the selected section.
+   */
   async scrollToSection(id: string) {
     if (this.menuOpen == true) {
       this.menuOpen = false;
@@ -97,10 +112,12 @@ export class NavigationComponent {
     });
   }
 
+
   openMenu() {
     this.menuOpen = true;
   }
 
+  
   closeMenu() {
     this.menuOpen = false;
   }
