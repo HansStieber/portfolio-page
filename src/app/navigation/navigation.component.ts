@@ -6,6 +6,7 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navigation',
@@ -25,9 +26,10 @@ import {
 })
 export class NavigationComponent {
   selectedMenuItem: string = '';
+  public selectedLanguage: string = 'en';
   public menuOpen: boolean = false;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, public translate: TranslateService) {
     router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
         if (this.router.url === '/impressum') {
@@ -46,6 +48,26 @@ export class NavigationComponent {
         }
       }
     });
+  }
+
+
+  translateSite(language: any) {
+    this.selectedLanguage = language;
+    this.translate.use(language);
+
+    let name = (document.getElementById('name') as HTMLInputElement);
+    let mail = (document.getElementById('mail') as HTMLInputElement);
+    let message = (document.getElementById('message') as HTMLInputElement);
+
+    if (language == 'en') {
+      name.placeholder = 'Your name';
+      mail.placeholder = 'Your email';
+      message.placeholder = 'Your message';
+    } else {
+      name.placeholder = 'Dein Name';
+      mail.placeholder = 'Deine Email Adresse';
+      message.placeholder = 'Deine Nachricht an mich';
+    }
   }
 
 
@@ -117,7 +139,7 @@ export class NavigationComponent {
     this.menuOpen = true;
   }
 
-  
+
   closeMenu() {
     this.menuOpen = false;
   }
