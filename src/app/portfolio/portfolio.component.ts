@@ -13,6 +13,11 @@ export class PortfolioComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
 
+
+  /**
+   * The function initialises the AOS library, which provides animations for certain elements. It also sets the applications variable
+   * by subscribing to a json at a given location.
+   */
   ngOnInit() {
     AOS.init();
     this.http.get(this.url).subscribe(res => {

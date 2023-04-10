@@ -15,6 +15,10 @@ export class ProjectComponent implements OnInit {
   @Input() git: any;
   @Input() indexImpair = false;
 
+
+  /**
+   * The function initialises the AOS library, which provides animations for certain elements.
+   */
   ngOnInit() {
     AOS.init();
   }

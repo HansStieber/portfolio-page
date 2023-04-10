@@ -8,6 +8,7 @@ import {
 } from '@angular/animations';
 import { TranslateService } from '@ngx-translate/core';
 
+
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
@@ -25,11 +26,19 @@ import { TranslateService } from '@ngx-translate/core';
   ]
 })
 export class NavigationComponent {
-  test: string = 'hallo';
   selectedMenuItem: string = '';
   public selectedLanguage: string = 'en';
-  public menuOpen: boolean = false; 
+  public menuOpen: boolean = false;
 
+
+  /**
+   * The constructor checks for a route change. When the route changes, it is checked if the user is at the impressum to disselect
+   * the section at the navigation by removing any specific value of the selectedMenuItem variable. If the user is moving to the
+   * main page the function scrolls to the selected section. It also checks for the currently selected language.
+   * 
+   * @param router - The router of the page
+   * @param translate - Sets translate as TranslateService
+   */
   constructor(private router: Router, public translate: TranslateService) {
     router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
@@ -37,15 +46,7 @@ export class NavigationComponent {
           this.selectedMenuItem = '';
         }
         if (this.router.url === '/') {
-          setTimeout(() => {
-            if (document.getElementById(this.selectedMenuItem)) {
-              document.getElementById(this.selectedMenuItem)!.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-                inline: "nearest"
-              });
-            }
-          }, 100);
+          this.scrollToSelectedSection();
           this.checkLanguage();
         }
       }
@@ -53,6 +54,27 @@ export class NavigationComponent {
   }
 
 
+  /**
+   * The function scrolls to the selected section when moving back to the main page from the imprint page. This is achieved by
+   * setting the selectedMenuItem variable as id of the section that is to be scrolled into view. A timeout is set to avoid the
+   * bug of not scrolling after route change.
+   */
+  scrollToSelectedSection() {
+    setTimeout(() => {
+      if (document.getElementById(this.selectedMenuItem)) {
+        document.getElementById(this.selectedMenuItem)!.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "nearest"
+        });
+      }
+    }, 100);
+  }
+
+
+  /**
+   * The function checks the selectedLanguage variable to translate the page to the currently selected language.
+   */
   checkLanguage() {
     if (this.selectedLanguage === 'de') {
       this.translateSite('de');
@@ -63,6 +85,12 @@ export class NavigationComponent {
   }
 
 
+  /**
+   * The function translates the page into the selected language. This is achieved by using the ngx translate library.
+   * The placeholder of the Input fields of the contact form and the submit button are changed manually.
+   * 
+   * @param language 
+   */
   translateSite(language: any) {
     this.selectedLanguage = language;
     this.translate.use(language);
@@ -77,7 +105,8 @@ export class NavigationComponent {
       mail.placeholder = 'Your email';
       message.placeholder = 'Your message';
       sendButton.innerHTML = 'Send message :)';
-    } else {
+    }
+    if (language == 'de') {
       name.placeholder = 'Dein Name';
       mail.placeholder = 'Deine Email Adresse';
       message.placeholder = 'Deine Nachricht an mich';

@@ -8,6 +8,10 @@ import * as AOS from 'aos';
 })
 export class AboutMeComponent implements OnInit {
 
+
+  /**
+   * The function initialises the AOS library, which provides animations for certain elements.
+   */
   ngOnInit(): void {
     AOS.init();
   }

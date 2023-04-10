@@ -16,6 +16,9 @@ export class ContactComponent implements OnInit {
   messageSent!: boolean;
 
 
+  /**
+ * The function initialises the AOS library, which provides animations for certain elements.
+ */
   ngOnInit() {
     AOS.init();
   }
@@ -113,7 +116,8 @@ export class ContactComponent implements OnInit {
 
 
   /**
-   * The function shows the confirmation that the mail was sent.
+   * The function shows the confirmation that the mail was sent. It therefore checks the html of the button to select the correct
+   * language.
    */
   showConfirmation() {
     this.messageSent = true;
@@ -128,7 +132,8 @@ export class ContactComponent implements OnInit {
 
 
   /**
-   * The function hides the confirmation that the mail was sent.
+   * The function hides the confirmation that the mail was sent. It therefore checks the html of the button to select the correct
+   * language.
    */
   hideConfirmation() {
     this.messageSent = false;
