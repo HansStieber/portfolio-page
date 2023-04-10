@@ -25,7 +25,7 @@
                 <textarea id="message" required placeholder="Your message" type="text" name="message" #messageField
                     data-aos="fade-left"></textarea>
                 <div class="button-container" data-aos="fade-left">
-                    <button #sendButton class="btn-orange" [ngClass]="{'confirmation': messageSent === true}">{{message}}</button>
+                    <button id="sendButton" #sendButton class="btn-orange" [ngClass]="{'confirmation': messageSent === true}" translate>Send message :)</button>
                 </div>
             </form>
         </div>

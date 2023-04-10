@@ -14,7 +14,6 @@ export class ContactComponent implements OnInit {
   @ViewChild('sendButton') sendButton!: ElementRef;
   @ViewChild('arrowUp') arrowUp!: ElementRef;
   messageSent!: boolean;
-  message: string = 'Send message :)';
 
 
   ngOnInit() {
@@ -49,11 +48,11 @@ export class ContactComponent implements OnInit {
    */
   confirmAndClear() {
     this.showConfirmation();
-    
+
     setTimeout(() => {
-    this.enableInputFields();
-    this.clearInputFields();
-    this.hideConfirmation();
+      this.enableInputFields();
+      this.clearInputFields();
+      this.hideConfirmation();
     }, 2000);
   }
 
@@ -69,9 +68,9 @@ export class ContactComponent implements OnInit {
   }
 
 
-/**
- * The function enables all input fields and the submit button.
- */
+  /**
+   * The function enables all input fields and the submit button.
+   */
   enableInputFields() {
     this.nameField.nativeElement.disabled = false;
     this.mailField.nativeElement.disabled = false;
@@ -118,15 +117,27 @@ export class ContactComponent implements OnInit {
    */
   showConfirmation() {
     this.messageSent = true;
-    this.message = 'Thanks for your message!'
+    let sendButton = (document.getElementById('sendButton') as HTMLButtonElement);
+    if (sendButton.innerHTML == 'Send message :)') {
+      sendButton.innerHTML = 'Message sent!';
+    }
+    if (sendButton.innerHTML == 'Nachricht senden :)') {
+      sendButton.innerHTML = 'Nachricht gesendet!';
+    }
   }
 
-  
+
   /**
    * The function hides the confirmation that the mail was sent.
    */
   hideConfirmation() {
     this.messageSent = false;
-    this.message = 'Send message :)';
+    let sendButton = (document.getElementById('sendButton') as HTMLButtonElement);
+    if (sendButton.innerHTML == 'Message sent!') {
+      sendButton.innerHTML = 'Send message :)';
+    }
+    if (sendButton.innerHTML == 'Nachricht gesendet!') {
+      sendButton.innerHTML = 'Nachricht senden :)';
+    }
   }
 }

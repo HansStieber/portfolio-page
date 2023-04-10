@@ -18,6 +18,6 @@ export class PortfolioComponent implements OnInit {
     this.http.get(this.url).subscribe(res => {
       this.applications = res;
     });
-  } 
+  }  
 }
 

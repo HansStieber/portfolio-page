@@ -15,5 +15,12 @@
 	"This page is a sample of my work - Please feel free to try them out.": "This page is a sample of my work - Please feel free to try them out.",
 	"Live test": "Live test",
 	"Let´s talk!": "Let´s talk!",
-	"Scroll down": "Scroll down"
+	"Scroll down": "Scroll down",
+	"join_explanation": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+	"elpolloloco_explanation": "A simple Jump-and-Run game based on an object-oriented approach. Help Pepe to find coins and poison bottles to fight against el pollo loco.",
+	"ringoffire_explanation": "A small online card game inspired by the popular drinking card game, that works on multiple devices.",
+	"pokedex_explanation": "Based on the PokeAPI a simple library that provides and catalogues pokemon information.",
+	"Send message :)": "Send message :)",
+	"Thanks for your message!": "Thanks for your message!"
+
 }

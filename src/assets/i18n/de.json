@@ -17,5 +17,11 @@
 	"This page is a sample of my work - Please feel free to try them out.": "Hier findest du einige meiner Arbeiten - Sieh sie dir gerne an!",
 	"Live test": "Live-Test",
 	"Let´s talk!": "Schreib mir!",
-	"Scroll down": "Bitte scrollen"
+	"Scroll down": "Bitte scrollen",
+	"join_explanation": "Ein vom Kanban-system inspierierter Task-manager. Erstellen und organisieren Sie Aufgaben mithilfe von Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.",
+	"elpolloloco_explanation": "Ein einfaches Jump-and-Run-Spiel umgesetzt mit Hilfe von Objektorientierung. Hilf Pepe, Münzen und Giftflaschen zu sammeln um gegen El Pollo Loco zu bestehen.",
+	"ringoffire_explanation": "Ein kleines Online-Kartenspiel, inspiriert durch das beliebte Trinkspiel. Dieses Spiel kann auf mehreren Geräten parallel gespielt werden.",
+	"pokedex_explanation": "Eine Bibliothek basierend auf der PokeAPI, die Pokemon-Informationen bereitstellt und katalogisiert.",
+	"Send message :)": "Nachricht senden :)",
+	"Thanks for your message!": "Danke für deine Nachricht!"
 }

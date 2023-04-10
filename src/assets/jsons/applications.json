@@ -3,7 +3,7 @@
         "title": "Join",
         "language": "JavaScript | HTML | CSS",
         "img": "join",
-        "explanation": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+        "explanation": "join_explanation",
         "git": "https://github.com/HansStieber/Join",
         "web": "join"
     },
@@ -11,7 +11,7 @@
         "title": "El Pollo Loco",
         "language": "JavaScript | HTML | CSS",
         "img": "elpolloloco",
-        "explanation": "A simple Jump-and-Run game based on an object-oriented approach. Help Pepe to find coins and poison bottles to fight against el pollo loco.",
+        "explanation": "elpolloloco_explanation",
         "git": "https://github.com/HansStieber/El-pollo-loco",
         "web": "elpolloloco"
     },
@@ -19,7 +19,7 @@
         "title": "Ring of Fire",
         "language": "Angular | Typescript | SCSS | HTML | Firebase",
         "img": "ringoffire",
-        "explanation": "A small online card game inspired by the popular drinking card game, that works on multiple devices.",
+        "explanation": "ringoffire_explanation",
         "git": "https://github.com/HansStieber/ring_of_fire",
         "web": "ringoffire"
     },
@@ -27,7 +27,7 @@
         "title": "Pokédex",
         "language": "JavaScript | HTML | CSS | API",
         "img": "pokedex",
-        "explanation": "Based on the PokeAPI a simple library that provides and catalogues pokemon information.",
+        "explanation": "pokedex_explanation",
         "git": "https://github.com/HansStieber/pokedex",
         "web": "pokedex"
     }

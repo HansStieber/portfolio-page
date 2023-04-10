@@ -10,7 +10,7 @@
         <div class="info-project" [ngClass]="{'ai-flex-end': indexImpair === true}">
             <h2>{{ title }}</h2>
             <h3>{{ language }}</h3>
-            <span [ngClass]="{'text-end': indexImpair === true}">{{ explanation }}</span>
+            <span [ngClass]="{'text-end': indexImpair === true}" translate>{{ explanation }}</span>
         </div>
         <div class="button-box" [ngClass]="{'jc-flex-end': indexImpair === true}">
             <a href="https://{{web}}.hans-stieber.com" target="_blank" data-aos="fade-up"><button

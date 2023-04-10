@@ -25,9 +25,10 @@ import { TranslateService } from '@ngx-translate/core';
   ]
 })
 export class NavigationComponent {
+  test: string = 'hallo';
   selectedMenuItem: string = '';
   public selectedLanguage: string = 'en';
-  public menuOpen: boolean = false;
+  public menuOpen: boolean = false; 
 
   constructor(private router: Router, public translate: TranslateService) {
     router.events.subscribe((val) => {
@@ -45,9 +46,20 @@ export class NavigationComponent {
               });
             }
           }, 100);
+          this.checkLanguage();
         }
       }
     });
+  }
+
+
+  checkLanguage() {
+    if (this.selectedLanguage === 'de') {
+      this.translateSite('de');
+    }
+    if (this.selectedLanguage === 'en') {
+      this.translateSite('en');
+    }
   }
 
 
@@ -58,15 +70,18 @@ export class NavigationComponent {
     let name = (document.getElementById('name') as HTMLInputElement);
     let mail = (document.getElementById('mail') as HTMLInputElement);
     let message = (document.getElementById('message') as HTMLInputElement);
+    let sendButton = (document.getElementById('sendButton') as HTMLButtonElement);
 
     if (language == 'en') {
       name.placeholder = 'Your name';
       mail.placeholder = 'Your email';
       message.placeholder = 'Your message';
+      sendButton.innerHTML = 'Send message :)';
     } else {
       name.placeholder = 'Dein Name';
       mail.placeholder = 'Deine Email Adresse';
       message.placeholder = 'Deine Nachricht an mich';
+      sendButton.innerHTML = 'Nachricht senden :)';
     }
   }
 

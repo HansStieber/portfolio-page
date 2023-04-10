@@ -9,7 +9,7 @@
             This page is a sample of my work - Please feel free to try them out.
         </span>
     </div>
-    <div>
+    <div> 
         <app-project *ngFor="let app of applications; let i = index" [indexImpair]="i % 2 != 0"
             [title]="applications[i]['title']" [explanation]="applications[i]['explanation']"
             [img]="applications[i]['img']" [language]="applications[i]['language']" [web]="applications[i]['web']"
