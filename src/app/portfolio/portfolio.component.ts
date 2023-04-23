@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as AOS from 'aos';
+import { Project } from '../models/project.class';
 
 @Component({
   selector: 'app-portfolio',
@@ -8,8 +9,8 @@ import * as AOS from 'aos';
   styleUrls: ['./portfolio.component.scss'],
 })
 export class PortfolioComponent implements OnInit {
-  applications: any;
-  url: string = '../../assets/jsons/applications.json';
+  projects: Project[] = [];
+  url: string = '../../assets/jsons/projects.json';
 
   constructor(private http: HttpClient) {}
 
@@ -20,8 +21,8 @@ export class PortfolioComponent implements OnInit {
    */
   ngOnInit() {
     AOS.init();
-    this.http.get(this.url).subscribe(res => {
-      this.applications = res;
+    this.http.get<any>(this.url).subscribe(res => {
+      this.projects = res;
     });
   }  
 }

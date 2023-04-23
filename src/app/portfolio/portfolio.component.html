@@ -9,12 +9,11 @@
             This page is a sample of my work - Please feel free to try them out.
         </span>
     </div>
-    <div> 
-        <app-project *ngFor="let app of applications; let i = index" [indexImpair]="i % 2 != 0"
-            [title]="applications[i]['title']" [explanation]="applications[i]['explanation']"
-            [img]="applications[i]['img']" [language]="applications[i]['language']" [web]="applications[i]['web']"
-            [git]="applications[i]['git']"></app-project>
+    <div>
+        <app-project *ngFor="let project of projects; let i = index" [indexImpair]="i % 2 != 0" [title]="project.title"
+            [explanation]="project.explanation" [img]="project.img" [language]="project.language" [web]="project.web"
+            [git]="project.git"></app-project>
     </div>
     <img class="splash-portfolio1" src="../../assets/img/splash-portfolio1.png" alt="splash-portfolio-1">
     <img class="splash-portfolio2" src="../../assets/img/splash-portfolio2.png" alt="splash-portfolio-2">
-</section> 
+</section>
