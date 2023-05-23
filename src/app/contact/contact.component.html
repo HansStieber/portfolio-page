@@ -3,11 +3,12 @@
         <div class="left-column">
             <div>
                 <div class="line-left"></div>
-                <h1 data-aos="fade-right" translate>Contact</h1>
+                <h1 data-aos="fade-right" data-aos-once="true" translate>Contact</h1>
             </div>
-            <div data-aos="fade-right">
+            <div data-aos="fade-right" data-aos-once="true">
                 <h2 translate>Got a problem to solve?</h2>
-                <p translate>Contact me through this form, I am interested in hearing you, knowing your ideas and contributing to
+                <p translate>Contact me through this form, I am interested in hearing you, knowing your ideas and
+                    contributing to
                     your
                     projects with my work.</p>
                 <p translate>Need a Frontend developer? <b translate>Contact me!</b></p>
@@ -15,22 +16,21 @@
         </div>
         <div class="right-column">
             <form (submit)="sendMail()" ngNativeValidate #myForm>
-                <input id="name" required placeholder="Your name" type="text" name="name"
-                    pattern="([a-zA-ZäöüÄÖÜß]+\s+){1,10}([a-zA-ZäöüÄÖÜß]+)"
-                    title="Bitte gib eine Vor- und Nachnamen ein!" #nameField data-aos="fade-left">
+                <input id="name" required placeholder="Your name" type="text" name="name" #nameField
+                    data-aos="fade-left" data-aos-once="true">
                 <input id="mail" required placeholder="Your email" type="email" name="mail"
                     pattern="(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\u0022(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*\u0022)@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])"
-                    title="Gib eine gültige E-Mail-Adresse ein! Umlaute sind nicht erlaubt!" #mailField
-                    data-aos="fade-left">
+                    #mailField data-aos="fade-left" data-aos-once="true">
                 <textarea id="message" required placeholder="Your message" type="text" name="message" #messageField
-                    data-aos="fade-left"></textarea>
-                <div class="button-container" data-aos="fade-left">
-                    <button id="sendButton" #sendButton class="btn-orange" [ngClass]="{'confirmation': messageSent === true}" translate>Send message :)</button>
+                    data-aos="fade-left" data-aos-once="true"></textarea>
+                <div class="button-container" data-aos="fade-left" data-aos-once="true">
+                    <button id="sendButton" #sendButton class="btn-orange"
+                        [ngClass]="{'confirmation': messageSent === true}" translate>Send message :)</button>
                 </div>
             </form>
         </div>
-    </div> 
-    <div class="lower-container" data-aos="fade-up">
+    </div>
+    <div class="lower-container" data-aos="fade-up" data-aos-once="true">
         <a (click)="scrollToStart()">
             <img #arrowUp src="../../assets/img/go-up.png"
                 (mouseover)="changeImgSrc('../../assets/img/go-up-orange.png')"

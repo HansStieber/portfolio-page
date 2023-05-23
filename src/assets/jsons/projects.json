@@ -25,10 +25,10 @@
     },
     {
         "title": "Pokédex",
-        "language": "JavaScript | HTML | CSS | API",
+        "language": "Angular | Typescript | Angular Material | HTML | CSS | API",
         "img": "pokedex",
         "explanation": "pokedex_explanation",
-        "git": "https://github.com/HansStieber/pokedex",
+        "git": "https://github.com/HansStieber/Pok-dex-with-Angular",
         "web": "pokedex"
     }
 ]
